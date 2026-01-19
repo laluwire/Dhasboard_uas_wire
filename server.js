@@ -16,3 +16,13 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
   console.log('Server berjalan di http://localhost:3000');
 });
+
+if (process.env.RAILWAY_ENVIRONMENT === undefined) {
+  db.connect((err) => {
+    if (err) {
+      console.log('Gagal koneksi DB:', err);
+    } else {
+      console.log('DB terkoneksi');
+    }
+  });
+}
