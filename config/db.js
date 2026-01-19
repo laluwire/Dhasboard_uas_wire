@@ -4,15 +4,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'dashboard_uas'
-});
-
-db.connect(err => {
-  if (err) {
-    console.error('Gagal koneksi DB:', err);
-    return;
-  }
-  console.log('MySQL Connected');
+  database: 'nama_db'
 });
 
 module.exports = db;
